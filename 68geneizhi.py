@@ -71,3 +71,49 @@ class LazyImport:
 
 time=LazyImport("time")
 print(time.time())
+
+import sys
+#检查python的最低版本
+if not sys.version_info >(2,7):
+   print("<2.7")
+elif not sys.version_info >= (3,5):
+   print( "<2.7" )
+else :
+   print(">3.3")
+   print(sys.version)
+
+# 检查对象使用内存的状况
+import sys
+mylist = range(0,10000)
+print(sys.getsizeof(mylist))
+# 48
+import  sys
+myreallist=[x for x in range(0,10000)]
+print(sys.getsizeof(myreallist))
+# 87624
+
+#合并
+dict1={'a':1,'b':2}
+dict2 ={'b':3,'c':4}
+m={**dict1,**dict2}
+print(m)
+# 切片 0~2 [1,2]
+first_two = [1,2,3,4,5][0:2]
+print(first_two)
+# 0~5 步长2 [1,3,5]
+steps = [1,2,3,4,5][0:5:2]
+print(steps)
+# 翻转 cfbda
+rever="adbfc"[::-1]
+print(rever)
+#全字符隔取一
+mstring="abcdef fim ddfsdf"[::2]
+print(mstring)
+
+
+# 统计元素出现次数
+from collections import Counter
+mlist=[1,1,2,3,1,3,2,4,4,5]
+c=Counter(mlist)
+print(c)
+# Counter({1: 3, 2: 2, 3: 2, 4: 2, 5: 1})
