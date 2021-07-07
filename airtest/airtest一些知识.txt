@@ -1,0 +1,3 @@
+ST.FIND_TIMEOUT    20 秒
+
+
