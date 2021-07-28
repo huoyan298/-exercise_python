@@ -4,6 +4,7 @@
 # @Site    : 
 # @File    : 
 # @Software: PyCharm
+'''
 # 将给的参数转为二进制
 print(bin(10))
 # 返回商和余数
@@ -31,7 +32,8 @@ def f(s):
 
 # 这里f位置有逗号 思考 ['one','two','six','four','five','three']
 l1=sorted(lst,key=f,)
-# print(l1)
+print(l1)
+print("l1,lst:",id(l1),id(lst))
 
 # 获取集合的枚举对象
 lst=['one','two','three','four','five']
@@ -117,3 +119,24 @@ mlist=[1,1,2,3,1,3,2,4,4,5]
 c=Counter(mlist)
 print(c)
 # Counter({1: 3, 2: 2, 3: 2, 4: 2, 5: 1})
+'''
+
+# 拼接字符串和序列
+import itertools
+# import operator
+# list(itertools.accumulate(range(1,11),operator.mul))
+# print(list  .count())
+
+a=['A','B','C']
+b=['x','y','z']
+c=a+b
+
+
+l=itertools.chain(*c)
+# 这里要思考下，遍历后，list(l)打印为[]
+# for i in l:
+#     print(c)
+
+print(type(l))
+print(list(l))
+
