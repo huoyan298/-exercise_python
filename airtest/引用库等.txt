@@ -1,0 +1,27 @@
+Python导入模块的几种方式
+1.import sys
+导入标准库
+2.from os import chmod
+  from os import *
+导入包文件，
+3, import logging as log
+将导入的模块起别名，可用别名调用
+
+4.查看python 模块里有什么方法：
+例子：（win)CMD->python
+            import math
+            help(math)
+
+5.引入其他的.air脚本的using()接口
+想要在1个.air脚本引入另外一个.air脚本可以这么实现
+.air脚本头部引入
+例子：using("common.air")
+      from common import common_function
+      common_function()
+在pycharm下可能报错：
+1.using里相对路径改为绝对路径
+using(r'D:/test/common.air")
+2.另外
+import sys
+sys.path.append(r"D:/test/common.air")
+using(r"common.air")
