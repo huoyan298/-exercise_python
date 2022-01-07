@@ -299,4 +299,4 @@ list3=list_test('a')
 print("list1,list2,list3:",list1,list2,list3)
 # [2,'a'] [12] [2,'a']
 # 新的默认列表仅在函数被定义时创建一次，list_test没有被指定的列表参数调用时，使用的是同一个列表
-# list1,list3使用的是同一个，list2是创建的列表
+# list1,list3使用的是同一个，list2是创建的列表了
