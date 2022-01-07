@@ -11,10 +11,7 @@ print(bin(10))
 print(divmod(20,3))
 # 可迭代转为元组
 print(tuple([1,2,3,4,5]))
-# 返回翻转的迭代器
-lst="你好啊"
-it=reversed(lst)
-# print(list(it))
+
 # 列表的切片
 a=("a","b","c","d","e","f","g","h")
 (0,1,2,3,4,5,6,7)
@@ -139,7 +136,7 @@ c=a+b
 # print(type(l))
 # print(list(l))
 
-
+'''
 l=[]
 a={}
 for i in range(0,7):
@@ -153,7 +150,7 @@ for i in range(0,7):
     # l.append(a)
     # print(l)
     # print(id(l))
-
+'''
 
 # l=[]
 # a={'num':0}
@@ -219,7 +216,6 @@ print(test())
 #         print(" "*abs(i),"*"*abs(n-abs(i)*2))
 #
 # test_xing()
-
 '''
 # 水仙花数
 def test_shuixianhua():
@@ -228,7 +224,7 @@ def test_shuixianhua():
         j=num//10%10
         k = num % 10
         if i**3 +j**3 +k**3 ==num:
-            print(str(num))
+            print(i**3,str(num))
 
 test_shuixianhua()
 '''
@@ -238,18 +234,55 @@ def test_sum(num_end):
     sum_all=0
     for i in range(1,num_end+1):
         sum_all+=i*(-1)**(i+1)
+        # print(i*(-1)**(i+1))
     return sum_all
 
 print(test_sum(100))
 '''
 # sum+=i*10+i
-def test_sum_h(n):
-    sum=0
-    for i in range(1,n+1):
-        t=i*10+3
-        print(t)
-        sum+=t
-    return sum
-print(test_sum_h(5))
 
-# 对称数组 if x==x[::-1]
+# def test_sum_h(n):
+#     sum=0
+#     for i in range(1,n+1):
+#         t=i*10+3
+#         print(t)
+#         sum+=t
+#     return sum
+# print(test_sum_h(5))
+
+ # 对称数组 if x==x[::-1]
+
+'''
+# 返回翻转的迭代器
+lst="你好啊"
+it=reversed(lst)
+print(tuple(it))
+print(list(reversed(lst)))
+'''
+
+str="asdfghjk"
+t=(1,)
+t=str[:-1]
+print(t)
+
+
+# interview
+def multiplicers():
+    return [lambda x:i*x for i in range(5)]
+
+print("multiplicers():",[m(2) for m in multiplicers()])
+# [8,8,8,8,8]  闭包中的变量是在内部函数被调用的时候被查找，结果是 multiplicers()
+#返回的函数被调用，在那时，无论哪个返回的函数被调用，for循环都已经完成了，i最后的值是3
+
+def multiplicers_1():
+    return  [lambda x,i=i:i*x for i in range(5)]
+
+#创建一ge 默认参数立即绑定它的参数
+print("multiplicers_1:",[m(2) for m in multiplicers_1()])
+
+from functools import partial
+from operator import mul
+def multiplicers_2():
+    return [ partial(mul,i) for i in range(5)]
+
+print("multiplicers_2:",[m(2) for m in multiplicers_2()])
